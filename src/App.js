@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
+import AgencyLogin from "./components/login/AgencyLogin";
+import CustomerLogin from "./components/login/CustomerLogin";
+import { Routes, Route } from 'react-router';
+import AgencyRegister from './components/signup/AgencyRegister';
+import CustomerRegister from "./components/signup/CustomerRegister";
+import Addnewcar from './components/agencyhome/Addnewcar';
+import AgencyHome from "./components/agencyhome/index";
+import CustomerHome from './components/customerhome/index';
+import Home from "./components/home";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div  >
+     <Routes>
+      <Route exact path ='/' element= {<Home/>}/>
+      <Route exact path ='/customerlogin' element= {<CustomerLogin/>}/>
+      <Route exact path = '/agencylogin' element = {<AgencyLogin/>}/>
+      <Route exact path = '/agencyRegister' element= {<AgencyRegister/>}/>
+      <Route exact path = '/customerRegister' element= {<CustomerRegister/>}/>
+      <Route exact path = '/addnewcar' element={<Addnewcar/>}/>
+      <Route exact path = '/agencyhome' element={<AgencyHome/>}/>
+      <Route exact path = '/customerhome' element={<CustomerHome/>}/>
+    </Routes>
     </div>
   );
 }
